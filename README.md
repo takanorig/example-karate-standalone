@@ -1,6 +1,6 @@
-# Examle for Karate Standalone
+# Example for Karate Standalone
 
-This repository is esamples for Karate.<br>
+This repository is examples for Karate.<br>
 https://github.com/intuit/karate
 
 For Karate standalone, please refer to the following site.<br>
