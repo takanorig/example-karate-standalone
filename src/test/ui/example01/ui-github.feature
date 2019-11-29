@@ -16,10 +16,10 @@ Scenario: Search intuit/karate in GitHub
     * def keyword = 'karate'
 
     Given driver 'https://github.com/search'
-        And waitUntil(driver.title == 'Code Search · GitHub')
+        And waitUntil(document.title == 'Code Search · GitHub')
         And input('input[name=q]', keyword)
     When submit().click('#search_form button.btn')
-        And waitForUrl('https://github.com/search?utf8=%E2%9C%93&q=' + keyword + '&ref=simplesearch')
+        And waitForUrl('/github.com/search?utf8=%E2%9C%93&q=' + keyword + '&ref=simplesearch')
     Then match driver.title == 'Search · karate · GitHub'
 
     * print text('li.repo-list-item h3:first-child a')
@@ -47,10 +47,10 @@ Scenario: Search2 intuit/karate in GitHub
     * replace formSubmitWebFn.${selector} = '#search_form'
 
     Given driver 'https://github.com/search'
-        And waitUntil(driver.title == 'Code Search · GitHub')
+        And waitUntil(document.title == 'Code Search · GitHub')
         And input('input[name=q]', keyword)
     When script(formSubmitWebFn)
-        And waitForUrl('https://github.com/search?utf8=%E2%9C%93&q=' + keyword + '&ref=simplesearch')
+        And waitForUrl('/github.com/search?utf8=%E2%9C%93&q=' + keyword + '&ref=simplesearch')
     Then match driver.title == 'Search · karate · GitHub'
 
     * print text('li.repo-list-item h3:first-child a')
@@ -67,10 +67,10 @@ Scenario: Get star-history of intuit/karate
     * def repo = 'intuit/karate'
 
     Given driver 'https://star-history.t9t.io/'
-        And waitUntil(driver.title == 'Star history')
+        And waitUntil(document.title == 'Star history')
         And input('input#repo', repo)
     When click('button#theBtn')
-        And waitForUrl('https://star-history.t9t.io/#' + repo)
+        And waitForUrl('/star-history.t9t.io/#' + repo)
     Then match value('input#repo') == repo
 
     * screenshot()
