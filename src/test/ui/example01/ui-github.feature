@@ -16,7 +16,7 @@ Scenario: Search intuit/karate in GitHub
     * def keyword = 'karate'
 
     Given driver 'https://github.com/search'
-        And waitUntil(document.title == 'Code Search · GitHub')
+        And waitUntil("document.title == 'Code Search · GitHub'")
         And input('input[name=q]', keyword)
     When submit().click('#search_form button.btn')
         And waitForUrl('/github.com/search?utf8=%E2%9C%93&q=' + keyword + '&ref=simplesearch')
@@ -47,7 +47,7 @@ Scenario: Search2 intuit/karate in GitHub
     * replace formSubmitWebFn.${selector} = '#search_form'
 
     Given driver 'https://github.com/search'
-        And waitUntil(document.title == 'Code Search · GitHub')
+        And waitUntil("document.title == 'Code Search · GitHub'")
         And input('input[name=q]', keyword)
     When script(formSubmitWebFn)
         And waitForUrl('/github.com/search?utf8=%E2%9C%93&q=' + keyword + '&ref=simplesearch')
@@ -67,7 +67,7 @@ Scenario: Get star-history of intuit/karate
     * def repo = 'intuit/karate'
 
     Given driver 'https://star-history.t9t.io/'
-        And waitUntil(document.title == 'Star history')
+        And waitUntil("document.title == 'Star history'")
         And input('input#repo', repo)
     When click('button#theBtn')
         And waitForUrl('/star-history.t9t.io/#' + repo)
