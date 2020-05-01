@@ -22,8 +22,8 @@ Scenario: Search intuit/karate in GitHub
         And waitForUrl('/github.com/search?utf8=%E2%9C%93&q=' + keyword + '&ref=simplesearch')
     Then match driver.title == 'Search · karate · GitHub'
 
-    * print text('li.repo-list-item h3:first-child a')
-    * match text('li.repo-list-item h3:first-child a') == 'intuit/karate'
+    * print text('li.repo-list-item div.f4:first-child a')
+    * match text('li.repo-list-item div.f4:first-child a') == 'intuit/karate'
 
     * screenshot()
 
@@ -53,8 +53,8 @@ Scenario: Search2 intuit/karate in GitHub
         And waitForUrl('/github.com/search?utf8=%E2%9C%93&q=' + keyword + '&ref=simplesearch')
     Then match driver.title == 'Search · karate · GitHub'
 
-    * print text('li.repo-list-item h3:first-child a')
-    * match text('li.repo-list-item h3:first-child a') == 'intuit/karate'
+    * print text('li.repo-list-item div.f4:first-child a')
+    * match text('li.repo-list-item div.f4:first-child a') == 'intuit/karate'
 
     * screenshot()
 
