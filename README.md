@@ -7,7 +7,7 @@ For Karate standalone, please refer to the following site.<br>
 https://github.com/intuit/karate/wiki/ZIP-Release
 
 
-Current Karate version : 0.9.5.RC
+Current Karate version : 0.9.5
 
 ## How to try the examples?
 
